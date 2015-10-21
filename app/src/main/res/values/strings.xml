@@ -14,6 +14,7 @@
         completions."
     </string>
     <string name="title_activity_main">Ecran accueil</string>
-    <string name="title_activity_register">RegisterActivity</string>
-    <string name="title_activity_welcome">Welcome</string>
+    <string name="title_activity_register">Création de compte</string>
+    <string name="title_activity_welcome">Accueil</string>
+    <string name="title_activity_login">Page de connexion</string>
 </resources>

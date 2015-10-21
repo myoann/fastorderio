@@ -37,9 +37,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Votre nom"
             android:ems="10"
-            android:id="@+id/editTextNom" />
+            android:id="@+id/editTextNom"
+            android:hint="Nom" />
     </LinearLayout>
 
     <LinearLayout
@@ -56,11 +56,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Votre prenom"
         android:ems="10"
         android:id="@+id/editTextPrenom"
         android:layout_below="@+id/linearLayout"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:hint="Prénom" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -104,9 +104,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:text="Telephone portable"
             android:ems="10"
-            android:id="@+id/editText" />
+            android:id="@+id/editText"
+            android:hint="Téléphone portable" />
     </LinearLayout>
 
     <LinearLayout
@@ -121,9 +121,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:text="Email"
             android:ems="10"
-            android:id="@+id/editText2" />
+            android:id="@+id/editText2"
+            android:hint="Email" />
     </LinearLayout>
 
     <LinearLayout
