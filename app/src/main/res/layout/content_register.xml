@@ -138,7 +138,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:text="Mot de passe"
             android:id="@+id/editText3"
             android:hint="Mot de passe"
             android:ems="10"
@@ -157,9 +156,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:text="Confirmation mot de passe"
             android:ems="10"
-            android:id="@+id/editText4" />
+            android:id="@+id/editText4"
+            android:hint="Confirmation mot de passe" />
     </LinearLayout>
 
     <LinearLayout

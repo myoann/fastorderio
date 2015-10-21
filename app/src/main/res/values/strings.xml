@@ -13,7 +13,7 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_main">Ecran accueil</string>
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_welcome">Welcome</string>
 </resources>
