@@ -38,7 +38,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
-public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor>, View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
      * Id to identity READ_CONTACTS permission request.
@@ -83,17 +83,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
-        Button bConn = (Button) findViewById(R.id.bConnexion);
-        bConn.setOnClickListener(this);
-        /*mEmailSignInButton.setOnClickListener(new OnClickListener() {
+        Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
+        mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                attemptLogin();
+                if (attemptLogin()) {
+                    startActivity(new Intent(LoginActivity.this, Welcome.class));
+                }
             }
         });
 
         mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);*/
+        mProgressView = findViewById(R.id.login_progress);
     }
 
     private void populateAutoComplete() {
@@ -145,10 +146,11 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private void attemptLogin() {
-        if (mAuthTask != null) {
+    private boolean attemptLogin() {
+        /*if (mAuthTask != null) {
             return;
-        }
+        }*/
+        boolean bool = false;
 
         // Reset errors.
         mEmailView.setError(null);
@@ -189,7 +191,9 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             showProgress(true);
             mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute((Void) null);
+            bool = true;
         }
+        return bool;
     }
 
     private boolean isEmailValid(String email) {
@@ -272,11 +276,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
     }
 
-    //Listener du bouton de connexion
-    @Override
-    public void onClick(View v) {
-        startActivity(new Intent(LoginActivity.this,Welcome.class));
-    }
 
     private interface ProfileQuery {
         String[] PROJECTION = {

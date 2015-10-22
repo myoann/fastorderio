@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:ems="10"
-            android:id="@+id/editTextNom"
+            android:id="@+id/editTextRegisterNom"
             android:hint="Nom" />
     </LinearLayout>
 
@@ -57,7 +57,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:ems="10"
-        android:id="@+id/editTextPrenom"
+        android:id="@+id/editTextRegisterPrenom"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentStart="true"
         android:hint="Prénom" />
@@ -66,7 +66,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextPrenom"
+        android:layout_below="@+id/editTextRegisterPrenom"
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout2">
 
@@ -82,13 +82,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Masculin"
-                android:id="@+id/radioButton" />
+                android:id="@+id/radioButtonRegisterMasculin" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Feminin"
-                android:id="@+id/radioButton2" />
+                android:id="@+id/radioButtonRegisterFeminin" />
             </RadioGroup>
         </LinearLayout>
 
@@ -105,7 +105,7 @@
             android:layout_height="wrap_content"
             android:inputType="phone"
             android:ems="10"
-            android:id="@+id/editText"
+            android:id="@+id/editTextRegisterTelephone"
             android:hint="Téléphone portable" />
     </LinearLayout>
 
@@ -117,12 +117,12 @@
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout4">
 
-        <EditText
+        <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:ems="10"
-            android:id="@+id/editText2"
+            android:id="@+id/editTextRegisterEmail"
             android:hint="Email" />
     </LinearLayout>
 
@@ -138,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:id="@+id/editText3"
+            android:id="@+id/editTextRegisterMotDePasse1"
             android:hint="Mot de passe"
             android:ems="10"
             android:longClickable="false" />
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:ems="10"
-            android:id="@+id/editText4"
+            android:id="@+id/editTextRegisterMotDePasse2"
             android:hint="Confirmation mot de passe" />
     </LinearLayout>
 
