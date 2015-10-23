@@ -63,17 +63,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mFirstNameView = (EditText) findViewById(R.id.editTextRegisterPrenom);
         mLastNameView = (EditText) findViewById(R.id.editTextRegisterNom);
 
-        String email = mEmailView.getText().toString();
-        String password1 = mPasswordView1.getText().toString();
-        String password2 = mPasswordView2.getText().toString();
-        String phone = mPhoneView.getText().toString();
-        String firstName = mFirstNameView.getText().toString();
-        String lastName = mLastNameView.getText().toString();
+
 
 
         Button enregistrerInscription = (Button) findViewById(R.id.buttonEnregistrerInscription);
 
         enregistrerInscription.setOnClickListener(this);
+
 
         mRegisterFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
@@ -81,6 +77,59 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onClick(View v) {
-        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        String email = mEmailView.getText().toString();
+        String password1 = mPasswordView1.getText().toString();
+        String password2 = mPasswordView2.getText().toString();
+        String phone = mPhoneView.getText().toString();
+        String firstName = mFirstNameView.getText().toString();
+        String lastName = mLastNameView.getText().toString();
+
+        boolean cancel = false;
+        View focusView = null;
+
+        // Check for a valid email address.
+        if (TextUtils.isEmpty(email)) {
+            mEmailView.setError(getString(R.string.error_field_required));
+            focusView = mEmailView;
+            cancel = true;
+        } else if (!isEmailValid(email)) {
+            mEmailView.setError(getString(R.string.error_invalid_email));
+            focusView = mEmailView;
+            cancel = true;
+        }
+
+        // Check for a valid password, if the user entered one.
+        if (TextUtils.isEmpty(password1) && !isPasswordValid(password1)) {
+            mPasswordView1.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView1;
+            cancel = true;
+        }
+
+        // Check for a valid password, if the user entered one.
+        if (TextUtils.isEmpty(password2) && !isPasswordValid(password2)) {
+            mPasswordView2.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView2;
+            cancel = true;
+        }
+
+        if (!password1.equals(password2)) {
+            mPasswordView2.setError(getString(R.string.error_not_same_passwords));
+            focusView = mPasswordView2;
+            cancel = true;
+        }
+
+        if (cancel == false) {
+            startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+        }
+    }
+
+    private boolean isEmailValid(String email) {
+        //TODO: Replace this with your own logic
+        return email.contains("@");
+    }
+
+    private boolean isPasswordValid(String password) {
+        //TODO: Replace this with your own logic
+        return password.length() > 4;
     }
 }
