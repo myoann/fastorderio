@@ -39,7 +39,8 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Bienvenue"
-            android:id="@+id/textView2" />
+            android:id="@+id/textView2"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -50,12 +51,6 @@
         android:layout_alignParentStart="true"
         android:id="@+id/linearLayout10">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Veuillez sélectionner &quot;s&apos;enregistrer&quot; pour créer un compte ou &quot;se connecter&quot; si vous avez dejà un."
-            android:id="@+id/textView3"
-            android:gravity="center_horizontal" />
     </LinearLayout>
 
     <LinearLayout
@@ -64,13 +59,17 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout10"
         android:layout_alignParentStart="true"
-        android:id="@+id/linearLayout11">
+        android:id="@+id/linearLayout11"
+        android:padding="10dp">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="S&apos;enregistrer"
-            android:id="@+id/register" />
+            android:textColor="@color/colorTButton"
+            android:background="@color/colorPrimaryDark"
+            android:id="@+id/register"
+            android:focusable="false" />
     </LinearLayout>
 
     <LinearLayout
@@ -78,13 +77,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearLayout11"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:padding="10dp">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Se connecter"
-            android:id="@+id/login" />
+            android:id="@+id/login"
+            android:color="@color/colorPrimaryDark"
+            android:textColor="@color/colorTButton"
+            android:background="@color/colorPrimaryDark"
+            />
+
     </LinearLayout>
 
 
