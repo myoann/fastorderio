@@ -118,7 +118,13 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             cancel = true;
         }
 
-        if (cancel == false) {
+        if (cancel) {
+            // There was an error; don't attempt login and focus the first
+            // form field with an error.
+            focusView.requestFocus();
+        } else {
+            // Show a progress spinner, and kick off a background task to
+            // perform the user login attempt.
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         }
     }
