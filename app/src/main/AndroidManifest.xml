@@ -33,11 +33,6 @@
                 android:value="xyz.restaurationmanager.MainActivity" />
         </activity>
         <activity
-            android:name=".Welcome"
-            android:label="@string/title_activity_welcome"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" >
         </activity>
