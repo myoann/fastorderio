@@ -27,6 +27,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +46,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private EditText mPhoneView;
     private EditText mFirstNameView;
     private EditText mLastNameView;
+    private RadioButton mMasculin;
+    private RadioButton mFeminin;
 
     private View mProgressView;
     private View mRegisterFormView;
@@ -62,12 +65,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mPhoneView = (EditText) findViewById(R.id.editTextRegisterTelephone);
         mFirstNameView = (EditText) findViewById(R.id.editTextRegisterPrenom);
         mLastNameView = (EditText) findViewById(R.id.editTextRegisterNom);
+        mMasculin = (RadioButton) findViewById(R.id.radioButtonRegisterMasculin);
+        mFeminin = (RadioButton) findViewById(R.id.radioButtonRegisterFeminin);
 
 
 
 
         Button enregistrerInscription = (Button) findViewById(R.id.buttonEnregistrerInscription);
-
+        //Button enregistrerInscription = (Button) findViewById(R.id.register_button);
         enregistrerInscription.setOnClickListener(this);
 
 
@@ -86,6 +91,25 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
         boolean cancel = false;
         View focusView = null;
+
+        // Check for not null firstName
+        if (TextUtils.isEmpty(firstName)) {
+            mFirstNameView.setError(getString(R.string.error_field_required));
+            focusView = mFirstNameView;
+            cancel = true;
+        }
+        // Check for not null lastName
+        if (TextUtils.isEmpty(lastName)) {
+            mLastNameView.setError(getString(R.string.error_field_required));
+            focusView = mLastNameView;
+            cancel = true;
+        }
+        // Check for not null radio M and F
+        if ( !(mMasculin.isChecked()) && !(mFeminin.isChecked())) {
+            mMasculin.setError(getString(R.string.error_field_required));
+            focusView = mMasculin;
+            cancel = true;
+        }
 
         // Check for a valid email address.
         if (TextUtils.isEmpty(email)) {

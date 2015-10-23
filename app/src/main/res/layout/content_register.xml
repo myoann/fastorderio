@@ -83,14 +83,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Masculin"
-                android:id="@+id/radioButtonRegisterMasculin" />
+                android:id="@+id/radioButtonRegisterMasculin"
+                android:checked="false" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Feminin"
                 android:id="@+id/radioButtonRegisterFeminin"
-                android:textColorHint="@color/colorAccent" />
+                android:textColorHint="@color/colorAccent"
+                android:checked="false" />
             </RadioGroup>
         </LinearLayout>
 
