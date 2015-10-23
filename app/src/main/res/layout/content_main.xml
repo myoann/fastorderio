@@ -39,8 +39,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Bienvenue"
-            android:id="@+id/textView2"
-            android:textColor="@color/colorAccent" />
+            android:id="@+id/textView2" />
     </LinearLayout>
 
     <LinearLayout
