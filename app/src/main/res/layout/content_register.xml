@@ -22,7 +22,8 @@
             android:layout_height="wrap_content"
             android:text="Veuillez saisir vos informations"
             android:id="@+id/textView"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark" />
     </LinearLayout>
 
     <LinearLayout
@@ -39,7 +40,9 @@
             android:inputType="textPersonName"
             android:ems="10"
             android:id="@+id/editTextRegisterNom"
-            android:hint="Nom" />
+            android:hint="Nom"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -60,7 +63,9 @@
         android:id="@+id/editTextRegisterPrenom"
         android:layout_below="@+id/linearLayout"
         android:layout_alignParentStart="true"
-        android:hint="Prénom" />
+        android:hint="Prénom"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorAccent" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -82,13 +87,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Masculin"
-                android:id="@+id/radioButtonRegisterMasculin" />
+                android:id="@+id/radioButtonRegisterMasculin"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent" />
 
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Feminin"
-                android:id="@+id/radioButtonRegisterFeminin" />
+                android:id="@+id/radioButtonRegisterFeminin"
+                android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent" />
             </RadioGroup>
         </LinearLayout>
 
@@ -106,7 +115,9 @@
             android:inputType="phone"
             android:ems="10"
             android:id="@+id/editTextRegisterTelephone"
-            android:hint="Téléphone portable" />
+            android:hint="Téléphone portable"
+            android:textColorHint="@color/colorAccent"
+            android:textColor="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -123,7 +134,10 @@
             android:inputType="textEmailAddress"
             android:ems="10"
             android:id="@+id/editTextRegisterEmail"
-            android:hint="Email" />
+            android:hint="Email"
+            android:textColor="@color/colorAccent"
+            android:textColorLink="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -141,7 +155,9 @@
             android:id="@+id/editTextRegisterMotDePasse1"
             android:hint="Mot de passe"
             android:ems="10"
-            android:longClickable="false" />
+            android:longClickable="false"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -158,7 +174,9 @@
             android:inputType="textPassword"
             android:ems="10"
             android:id="@+id/editTextRegisterMotDePasse2"
-            android:hint="Confirmation mot de passe" />
+            android:hint="Confirmation mot de passe"
+            android:textColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent" />
     </LinearLayout>
 
     <LinearLayout
@@ -174,7 +192,9 @@
             android:layout_height="wrap_content"
             android:text="S&apos;enregistrer"
             android:id="@+id/buttonEnregistrerInscription"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorTButton"
+            android:background="@color/colorPrimaryDark" />
     </LinearLayout>
 
     <LinearLayout
