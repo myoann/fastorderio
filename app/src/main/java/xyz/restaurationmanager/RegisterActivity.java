@@ -71,8 +71,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
 
 
-        Button enregistrerInscription = (Button) findViewById(R.id.buttonEnregistrerInscription);
-        //Button enregistrerInscription = (Button) findViewById(R.id.register_button);
+        //Button enregistrerInscription = (Button) findViewById(R.id.buttonEnregistrerInscription);
+        Button enregistrerInscription = (Button) findViewById(R.id.register_button);
         enregistrerInscription.setOnClickListener(this);
 
 

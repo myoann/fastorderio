@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">Restauration Manager</string>
     
-    <!-- Strings related to login -->
+    <!-- Strings related to login and register -->
+    <string name="prompt_first_name">Prénom</string>
+    <string name="prompt_last_name">Nom</string>
+    <string name="prompt_telephone">Téléphone portable</string>
     <string name="prompt_email">Email</string>
-    <string name="prompt_password">Mot de passe (optionnel)</string>
-    <string name="action_sign_in">Sign in or register</string>
+    <string name="prompt_password">Mot de passe</string>
+    <string name="prompt_confirm_password">Confirmation mot de passe</string>
+    <string name="action_sign_in">Se connecter</string>
+    <string name="action_register">S\'inscrire</string>
     <string name="action_sign_in_short">Se connecter</string>
     <string name="error_invalid_email">Email invalide</string>
     <string name="error_invalid_password">Mot de passe trop court</string>
