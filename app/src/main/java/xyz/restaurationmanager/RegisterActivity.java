@@ -106,8 +106,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
         // Check for not null radio M and F
         if ( !(mMasculin.isChecked()) && !(mFeminin.isChecked())) {
-            mMasculin.setError(getString(R.string.error_field_required));
-            focusView = mMasculin;
+            mFeminin.setError(getString(R.string.error_field_required));
+            focusView = mFeminin;
             cancel = true;
         }
 
