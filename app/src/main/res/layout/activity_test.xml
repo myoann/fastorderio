@@ -9,7 +9,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/imageView2"
-        android:src="@drawable/chicken_logo_phone_icon" />
+        android:src="@drawable/image_cercle_contact" />
 
     <TextView
         android:layout_width="wrap_content"
