@@ -39,6 +39,9 @@ import com.androidquery.callback.AjaxStatus;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -103,6 +106,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String firstName = mFirstNameView.getText().toString();
         String lastName = mLastNameView.getText().toString();
         String sexType = "M";
+        String createdBy = "Massa & Moise Ltd.";
+
+        aq = new AQuery(v);
 
         boolean cancel = false;
         View focusView = null;
@@ -164,26 +170,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
+
+
+            GsonTransformer t = new GsonTransformer();
+
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("nom", lastName);
-            params.put("prenom",firstName);
+            params.put("prenom", firstName);
             params.put("telephone",phone);
             params.put("email",email);
-            params.put("createdby","Massa & Moise");
+            params.put("createdby",createdBy);
             params.put("password",password1);
             params.put("sexe",sexType);
             aq = new AQuery(v);
-            aq.ajax(url, params, JSONObject.class, new AjaxCallback<JSONObject>() {
-                @Override
-                public void callback(String urlPost, JSONObject json, AjaxStatus status) {
-                    System.out.println("Réponse = " + json);
-                    try {
-                        Log.d("ok", json.getString("nom"));
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+            aq.transformer(t).ajax(url, params, Account.class, new AjaxCallback<Account>() {
+                public void callback(String url, Account account, AjaxStatus status) {
+                    Gson gson = new Gson();
+                    Log.d("GSON Object:", gson.toJson(account));
                 }
             });
+
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         }
     }
