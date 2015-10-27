@@ -172,7 +172,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             params.put("createdby","Massa & Moise");
             params.put("password",password1);
             params.put("sexe",sexType);
-
+            aq = new AQuery(v);
             aq.ajax(url, params, JSONObject.class, new AjaxCallback<JSONObject>() {
                 @Override
                 public void callback(String urlPost, JSONObject json, AjaxStatus status) {
