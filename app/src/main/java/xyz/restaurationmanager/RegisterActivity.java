@@ -20,6 +20,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -31,8 +32,17 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.androidquery.AQuery;
+import com.androidquery.callback.AjaxCallback;
+import com.androidquery.callback.AjaxStatus;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -52,6 +62,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private View mProgressView;
     private View mRegisterFormView;
 
+    AQuery aq;
+    String url = "http://92.243.14.22/person/";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         System.out.println("On create RegisterActivity");
@@ -67,6 +80,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         mLastNameView = (EditText) findViewById(R.id.editTextRegisterNom);
         mMasculin = (RadioButton) findViewById(R.id.radioButtonRegisterMasculin);
         mFeminin = (RadioButton) findViewById(R.id.radioButtonRegisterFeminin);
+
 
 
 
@@ -88,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String phone = mPhoneView.getText().toString();
         String firstName = mFirstNameView.getText().toString();
         String lastName = mLastNameView.getText().toString();
+        String sexType = "M";
 
         boolean cancel = false;
         View focusView = null;
@@ -149,6 +164,26 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
+            Map<String, Object> params = new HashMap<String, Object>();
+            params.put("nom", lastName);
+            params.put("prenom",firstName);
+            params.put("telephone",phone);
+            params.put("email",email);
+            params.put("createdby","Massa & Moise");
+            params.put("password",password1);
+            params.put("sexe",sexType);
+
+            aq.ajax(url, params, JSONObject.class, new AjaxCallback<JSONObject>() {
+                @Override
+                public void callback(String urlPost, JSONObject json, AjaxStatus status) {
+                    System.out.println("Réponse = " + json);
+                    try {
+                        Log.d("ok", json.getString("nom"));
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
             startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
         }
     }
@@ -161,5 +196,9 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private boolean isPasswordValid(String password) {
         //TODO: Replace this with your own logic
         return password.length() > 4;
+    }
+
+    public void ttttt() {
+
     }
 }
