@@ -54,13 +54,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     private AutoCompleteTextView mEmailView;
-    private EditText mPasswordView1;
-    private EditText mPasswordView2;
-    private EditText mPhoneView;
-    private EditText mFirstNameView;
-    private EditText mLastNameView;
-    private RadioButton mMasculin;
-    private RadioButton mFeminin;
+    private EditText mPasswordView;
 
     private View mProgressView;
     private View mRegisterFormView;
@@ -76,7 +70,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         // Set up the register form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.editTextLoginEmail);
-        mPasswordView1 = (EditText) findViewById(R.id.editTextLoginPassword);
+        mPasswordView = (EditText) findViewById(R.id.editTextLoginPassword);
 
 
 
@@ -93,9 +87,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         String email = mEmailView.getText().toString();
-        String password1 = mPasswordView1.getText().toString();
+        String password = mPasswordView.getText().toString();
         Log.d("EMAIL : ", email);
-        Log.d("PASS : ", password1);
+        Log.d("PASS : ", password);
 
         aq = new AQuery(v);
 
@@ -114,9 +108,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
 
         // Check for a valid password, if the user entered one.
-        if (TextUtils.isEmpty(password1) && !isPasswordValid(password1)) {
-            mPasswordView1.setError(getString(R.string.error_invalid_password));
-            focusView = mPasswordView1;
+        if (TextUtils.isEmpty(password) && !isPasswordValid(password)) {
+            mPasswordView.setError(getString(R.string.error_invalid_password));
+            focusView = mPasswordView;
             cancel = true;
         }
 
@@ -133,15 +127,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             Map<String, Object> params = new HashMap<String, Object>();
             params.put("email",email);
-            params.put("password",password1);
+            params.put("password",password);
             aq = new AQuery(v);
             aq.transformer(t).ajax(url, params, Success.class, new AjaxCallback<Success>() {
                 public void callback(String url, Success success, AjaxStatus status) {
                     Gson gson = new Gson();
                     Log.d("GSON OBJECT : ",gson.toJson(success));
-                    Log.d("GSON OBJECT SUCCESS : ",gson.toJson(success.getSuccess()));
                     String isSuccess = gson.toJson(success.getSuccess());
-                    Log.d("isSuccess", isSuccess);
                     if (isSuccess.contentEquals(isSuccess)) {
                         startActivity(new Intent(LoginActivity.this, NavigationDrawerActivity.class));
                     } else {

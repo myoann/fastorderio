@@ -9,25 +9,31 @@ import com.google.gson.Gson;
  */
 public class Account implements Transformer {
     String email;
-    String password1;
-    String password2;
-    String phone;
-    String firstName;
-    String lastName;
-    String createdBy;
-    String sexType;
+    String password;
+    String telephone;
+    String prenom;
+    String nom;
+    String createdby;
+    String sexe;
+    String connected;
+    String createdAt;
+    String updatedAt;
+    String id;
 
     public Account() {}
 
-    public Account(String email, String password1, String password2, String phone, String firstName, String lastName, String createdBy, String sexType) {
+    public Account(String email, String password, String telephone, String prenom, String nom, String createdby, String sexe, String connected, String createdAt, String updatedAt, String id) {
         this.email = email;
-        this.password1 = password1;
-        this.password2 = password2;
-        this.phone = phone;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.createdBy = createdBy;
-        this.sexType = sexType;
+        this.password = password;
+        this.telephone = telephone;
+        this.prenom = prenom;
+        this.nom = nom;
+        this.createdby = createdby;
+        this.sexe = sexe;
+        this.connected = connected;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.id = id;
     }
 
     public String getEmail() {
@@ -38,61 +44,70 @@ public class Account implements Transformer {
         this.email = email;
     }
 
-    public String getPassword1() {
-        return password1;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPassword1(String password1) {
-        this.password1 = password1;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhone() {
-        return phone;
+        return telephone;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhone(String telephone) {
+        this.telephone = telephone;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getNom() {
+        return nom;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getCreatedBy() {
-        return createdBy;
+        return createdby;
     }
 
-    public void setCreatedBy(String createdBy) {
-        this.createdBy = createdBy;
+    public void setCreatedBy(String createdby) {
+        this.createdby = createdby;
     }
 
     public String getSexType() {
-        return sexType;
+        return sexe;
     }
 
-    public void setSexType(String sexType) {
-        this.sexType = sexType;
+    public void setSexType(String sexe) {
+        this.sexe = sexe;
     }
+
+    public String getConnected() {
+        return connected;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public String getId() {
+        return id;
+    }
+
 
     @Override
     public <T> T transform(String url, Class<T> type, String encoding, byte[] data, AjaxStatus status) {
