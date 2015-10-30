@@ -208,7 +208,4 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         return password.length() > 4;
     }
 
-    public void ttttt() {
-
-    }
 }
