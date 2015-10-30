@@ -4,10 +4,12 @@ import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.Transformer;
 import com.google.gson.Gson;
 
+import java.io.Serializable;
+
 /**
  * Created by Yoann on 10/27/2015.
  */
-public class Account implements Transformer {
+public class Account implements Transformer, Serializable {
     String email;
     String password;
     String telephone;

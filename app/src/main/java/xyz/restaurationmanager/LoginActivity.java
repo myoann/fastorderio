@@ -132,10 +132,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             aq.transformer(t).ajax(url, params, Success.class, new AjaxCallback<Success>() {
                 public void callback(String url, Success success, AjaxStatus status) {
                     Gson gson = new Gson();
-                    Log.d("GSON OBJECT : ",gson.toJson(success));
+                    Account obj = success.getUser();
                     String isSuccess = gson.toJson(success.getSuccess());
                     if (isSuccess.contentEquals(isSuccess)) {
-                        startActivity(new Intent(LoginActivity.this, NavigationDrawerActivity.class));
+                        Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
+                        //to pass :
+                        intent.putExtra("user", obj);
+                        // to retrieve object in second Activity
+                        getIntent().getSerializableExtra("user");
+                        startActivity(intent);
                     } else {
                         Log.d("NOOON", " pas connecte");
                     }

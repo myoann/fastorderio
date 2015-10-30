@@ -27,8 +27,7 @@
         <activity
             android:name=".RegisterActivity"
             android:label="@string/title_activity_register"
-            android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="xyz.restaurationmanager.MainActivity" />
@@ -39,8 +38,7 @@
         </activity>
         <activity
             android:name=".NavigationDrawerActivity"
-            android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:label="@string/title_activity_navigation_drawer">
         </activity>
         <activity
             android:name=".TestActivity"
