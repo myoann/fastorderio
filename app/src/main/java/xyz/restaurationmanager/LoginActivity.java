@@ -139,7 +139,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //to pass :
                         intent.putExtra("user", obj);
                         // to retrieve object in second Activity
-                        getIntent().getSerializableExtra("user");
                         startActivity(intent);
                     } else {
                         Log.d("NOOON", " pas connecte");
