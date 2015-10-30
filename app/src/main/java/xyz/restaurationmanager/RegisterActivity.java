@@ -105,7 +105,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         String phone = mPhoneView.getText().toString();
         String firstName = mFirstNameView.getText().toString();
         String lastName = mLastNameView.getText().toString();
-        String sexType = "M";
+        String sexType = "";
         String createdBy = "Massa & Moise Ltd.";
 
         aq = new AQuery(v);
@@ -130,6 +130,10 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             mFeminin.setError(getString(R.string.error_field_required));
             focusView = mFeminin;
             cancel = true;
+        }else if(mMasculin.isChecked()){
+            sexType = "M";
+        }else if(mFeminin.isChecked()){
+            sexType = "F";
         }
 
         // Check for a valid email address.

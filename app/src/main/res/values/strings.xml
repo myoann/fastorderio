@@ -31,4 +31,12 @@
 
     <string name="action_settings">Settings</string>
     <string name="title_activity_test">TestActivity</string>
+    <string-array name="country_arrays">
+        <item>France</item>
+        <item>USA</item>
+        <item>England</item>
+        <item>Italia</item>
+        <item>India</item>
+        <item>Indonesia</item>
+    </string-array>
 </resources>
