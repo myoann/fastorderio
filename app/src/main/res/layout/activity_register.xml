@@ -55,14 +55,14 @@
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Masculin"
+                    android:text="@string/prompt_sex_man"
                     android:id="@+id/radioButtonRegisterMasculin"
                     android:checked="false" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feminin"
+                    android:text="@string/prompt_sex_woman"
                     android:id="@+id/radioButtonRegisterFeminin"
                     android:textColorHint="@color/colorAccent"
                     android:checked="false" />
