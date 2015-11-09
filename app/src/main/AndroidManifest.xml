@@ -39,12 +39,14 @@
         <activity
             android:name=".NavigationDrawerActivity"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".TestActivity"
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity android:name=".ListAcounts" >
         </activity>
     </application>
 

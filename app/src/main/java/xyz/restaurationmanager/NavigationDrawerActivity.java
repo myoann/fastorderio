@@ -14,10 +14,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    Button bAfficherUtilisateurs;
 
     TextView eTextNom;
     @Override
@@ -41,6 +44,15 @@ public class NavigationDrawerActivity extends AppCompatActivity
         Account a = (Account) getIntent().getSerializableExtra("user");
         this.eTextNom =  (TextView)(this.findViewById(R.id.textViewHomeName));
         this.eTextNom.setText(a.getPrenom() + " " + a.getNom());
+
+        this.bAfficherUtilisateurs = (Button)findViewById(R.id.bUtil);
+        this.bAfficherUtilisateurs.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavigationDrawerActivity.this, ListAcounts.class));
+            }
+        });
     }
 
     @Override
