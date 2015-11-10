@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.List;
@@ -46,7 +47,8 @@ public class AccountItemAdapter extends BaseAdapter {
             v = View.inflate(context, R.layout.content_list_accounts, null);
             viewHolder = new AccountViewHolder();
             viewHolder.nom_prenom= (TextView)v.findViewById(R.id.title_name_firstname);
-           // viewHolder.date_creation= (TextView)v.findViewById(R.id.txt_date_inscription);
+           //viewHolder.date_creation= (TextView)v.findViewById(R.id.txt_date_inscription);
+            viewHolder.bSuppAccount = (Button) v.findViewById(R.id.bSuppAccount);
             v.setTag(viewHolder);
         }
         else{
@@ -54,12 +56,13 @@ public class AccountItemAdapter extends BaseAdapter {
         }
         Account account = acounts.get(position);
         viewHolder.nom_prenom.setText(account.getPrenom());
-        viewHolder.date_creation.setText(account.getCreatedAt());
+//        viewHolder.date_creation.setText(account.getCreatedAt());
         return v;
     }
 
     class AccountViewHolder{
         TextView nom_prenom;
         TextView date_creation;
+        Button bSuppAccount;
     }
 }

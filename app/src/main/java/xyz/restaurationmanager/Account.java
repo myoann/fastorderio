@@ -136,6 +136,10 @@ public class Account implements Transformer, Serializable {
         return id;
     }
 
+    public void setId(String id){
+        this.id = id;
+    }
+
 
     @Override
     public <T> T transform(String url, Class<T> type, String encoding, byte[] data, AjaxStatus status) {
