@@ -3,7 +3,7 @@ package xyz.restaurationmanager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class ListAcounts extends AppCompatActivity {
+public class ListAccounts extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
