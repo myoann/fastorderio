@@ -11,6 +11,24 @@ import java.io.Serializable;
  */
 public class Account implements Transformer, Serializable {
     String email;
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", nom='" + nom + '\'' +
+                ", createdby='" + createdby + '\'' +
+                ", sexe='" + sexe + '\'' +
+                ", connected='" + connected + '\'' +
+                ", createdAt='" + createdAt + '\'' +
+                ", updatedAt='" + updatedAt + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
+
     String password;
     String telephone;
     String prenom;
@@ -98,8 +116,16 @@ public class Account implements Transformer, Serializable {
         return connected;
     }
 
+    public void setConnected(String connected) {
+        this.connected = connected;
+    }
+
     public String getCreatedAt() {
         return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
 
     public String getUpdatedAt() {
