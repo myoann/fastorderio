@@ -138,6 +138,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
                         //to pass :
                         intent.putExtra("user", obj);
+                        Log.d("Login Activity", "connexion");
                         // to retrieve object in second Activity
                         startActivity(intent);
                     } else {
