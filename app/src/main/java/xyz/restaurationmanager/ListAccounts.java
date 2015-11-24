@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -34,42 +35,37 @@ public class ListAccounts extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_liste_accounts);
-
         AQuery aq = new AQuery(this);
         final ArrayList<Account> listAccounts = new ArrayList<Account>();
 
         aq.ajax(url, JSONArray.class, new AjaxCallback<JSONArray>() {
             @Override
             public void callback(String url, JSONArray json, AjaxStatus status) {
-                ListView lst = (ListView)findViewById(R.id.list_accounts);
-                if(json != null){
+                ListView lst = (ListView) findViewById(R.id.list_accounts);
+                if (json != null) {
                     //successful ajax call, show status code and json content
 
-                        for (int i = 0; i < json.length(); i++) {
-                            try {
-                                JSONObject o = json.getJSONObject(i);
-                                Account a = new Account();
-                                if(!o.getString("nom").isEmpty() && !o.getString("prenom").isEmpty() && !o.getString("connected").isEmpty()&& !o.getString("createdAt").isEmpty()) {
-                                    a.setNom(o.getString("nom"));
-                                    a.setPrenom(o.getString("prenom"));
-                                    a.setConnected(o.getString("connected"));
-                                    a.setCreatedAt(o.getString("createdAt"));
-                                    a.setId(o.getString("id"));
-                                }else{
-                                    throw new JSONException("Valeur vide ou nulle");
-                                }
-
-                                listAccounts.add(a);
-                            } catch (JSONException e) {
-
-                                continue;
+                    for (int i = 0; i < json.length(); i++) {
+                        try {
+                            JSONObject o = json.getJSONObject(i);
+                            Account a = new Account();
+                            if (!o.getString("nom").isEmpty() && !o.getString("prenom").isEmpty() && !o.getString("connected").isEmpty() && !o.getString("createdAt").isEmpty()) {
+                                a.setNom(o.getString("nom"));
+                                a.setPrenom(o.getString("prenom"));
+                                a.setConnected(o.getString("connected"));
+                                a.setCreatedAt(o.getString("createdAt"));
+                                a.setId(o.getString("id"));
+                            } else {
+                                throw new JSONException("Valeur vide ou nulle");
                             }
-                        }
 
-                    for (int j = 0; j<listAccounts.size(); j++) {
-                        Log.d("biatchList", listAccounts.get(j).toString());
+                            listAccounts.add(a);
+                        } catch (JSONException e) {
+
+                            continue;
+                        }
                     }
-                    AccountItemAdapter adapter = new AccountItemAdapter(ListAccounts.this,listAccounts);
+                    AccountItemAdapter adapter = new AccountItemAdapter(ListAccounts.this, listAccounts);
                     lst.setAdapter(adapter);
                 } else {
                     //ajax error, show error code

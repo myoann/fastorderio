@@ -7,7 +7,16 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.androidquery.AQuery;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Florian on 08/11/2015.
@@ -41,7 +50,7 @@ public class AccountItemAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup arg2) {
         View v = convertView;
-
+        final int pos = position;
         AccountViewHolder viewHolder = null;
         if(v==null){
             v = View.inflate(context, R.layout.content_list_accounts, null);
@@ -49,6 +58,32 @@ public class AccountItemAdapter extends BaseAdapter {
             viewHolder.nom_prenom= (TextView)v.findViewById(R.id.title_name_firstname);
            //viewHolder.date_creation= (TextView)v.findViewById(R.id.txt_date_inscription);
             viewHolder.bSuppAccount = (Button) v.findViewById(R.id.bSuppAccount);
+            viewHolder.bSuppAccount.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    System.out.println("Suppression de l'utilisateur");
+                    String id =acounts.get(pos).getId();
+                    System.out.println("id ==> "+id);
+                    URL url = null;
+                    try {
+                        url = new URL("http://92.243.14.22/person/"+id);
+                        HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
+                        httpCon.setDoOutput(true);
+                        httpCon.setRequestProperty(
+                                "Content-Type", "application/x-www-form-urlencoded" );
+                        httpCon.setRequestMethod("DELETE");
+                        httpCon.connect();
+
+                    } catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    } catch (ProtocolException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                }
+            });
             v.setTag(viewHolder);
         }
         else{
