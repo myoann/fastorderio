@@ -25,6 +25,7 @@ public class AccountItemAdapter extends BaseAdapter {
 
     private Context context;
     public List<Account> acounts;
+    public int positionA;
 
     public AccountItemAdapter(Context context, List<Account> acounts) {
         this.context = context;
@@ -43,13 +44,13 @@ public class AccountItemAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int arg0) {
-        return Long.getLong(acounts.get(arg0).getId());
+        return 0;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup arg2) {
         View v = convertView;
-        final int pos = position;
+        this.positionA = position;
         AccountViewHolder viewHolder = null;
         if(v==null){
             v = View.inflate(context, R.layout.content_list_accounts, null);
@@ -61,11 +62,11 @@ public class AccountItemAdapter extends BaseAdapter {
                 @Override
                 public void onClick(View v) {
                     System.out.println("Suppression de l'utilisateur");
-                    String id =acounts.get(pos).getId();
+                    String id =acounts.get(AccountItemAdapter.this.positionA).getId();
                     System.out.println("id ==> " + id);
                     DeleteAccountTask task = new DeleteAccountTask();
                     task.execute(id);
-                    acounts.remove(pos);
+                    acounts.remove(AccountItemAdapter.this.positionA);
                     AccountItemAdapter.this.notifyDataSetChanged();
 
 
