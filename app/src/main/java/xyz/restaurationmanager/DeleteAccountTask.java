@@ -17,14 +17,13 @@ public class DeleteAccountTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         URL url = null;
         try {
-            url = new URL("http://92.243.14.22/person/563e4c317db67c3f057e327c");//+params[0]);
+            url = new URL("http://92.243.14.22/person/"+params[0]);
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
-            httpCon.setRequestProperty(
-                    "Content-Type", "application/x-www-form-urlencoded");
+            httpCon.setRequestProperty("Content-Type", "application/xml");
             httpCon.setRequestMethod("DELETE");
             httpCon.connect();
-            Log.d("Code réponse", ""+httpCon.getResponseCode());
+            Log.d("Code réponse", "" + httpCon.getResponseCode());
             //return true;
         } catch (MalformedURLException e) {
             e.printStackTrace();

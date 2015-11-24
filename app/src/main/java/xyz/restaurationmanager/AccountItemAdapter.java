@@ -43,8 +43,7 @@ public class AccountItemAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int arg0) {
-        // TODO Auto-generated method stub
-        return 0;
+        return Long.getLong(acounts.get(arg0).getId());
     }
 
     @Override
@@ -63,12 +62,16 @@ public class AccountItemAdapter extends BaseAdapter {
                 public void onClick(View v) {
                     System.out.println("Suppression de l'utilisateur");
                     String id =acounts.get(pos).getId();
-                    System.out.println("id ==> "+id);
+                    System.out.println("id ==> " + id);
                     DeleteAccountTask task = new DeleteAccountTask();
                     task.execute(id);
+                    acounts.remove(pos);
+                    AccountItemAdapter.this.notifyDataSetChanged();
+
 
                 }
             });
+
             v.setTag(viewHolder);
         }
         else{
