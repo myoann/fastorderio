@@ -64,23 +64,8 @@ public class AccountItemAdapter extends BaseAdapter {
                     System.out.println("Suppression de l'utilisateur");
                     String id =acounts.get(pos).getId();
                     System.out.println("id ==> "+id);
-                    URL url = null;
-                    try {
-                        url = new URL("http://92.243.14.22/person/"+id);
-                        HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
-                        httpCon.setDoOutput(true);
-                        httpCon.setRequestProperty(
-                                "Content-Type", "application/x-www-form-urlencoded" );
-                        httpCon.setRequestMethod("DELETE");
-                        httpCon.connect();
-
-                    } catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    } catch (ProtocolException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    DeleteAccountTask task = new DeleteAccountTask();
+                    task.execute(id);
 
                 }
             });
