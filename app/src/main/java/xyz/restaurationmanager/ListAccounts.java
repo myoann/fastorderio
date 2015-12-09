@@ -29,7 +29,7 @@ import java.util.Map;
 public class ListAccounts extends AppCompatActivity  {
 
     AQuery aq;
-    String url = "http://92.243.14.22/person/";
+    String url = "http://92.243.14.22:1337/person/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -58,6 +58,7 @@ public class AccountItemAdapter extends BaseAdapter {
             viewHolder.nom_prenom= (TextView)v.findViewById(R.id.title_name_firstname);
            //viewHolder.date_creation= (TextView)v.findViewById(R.id.txt_date_inscription);
             viewHolder.bSuppAccount = (Button) v.findViewById(R.id.bSuppAccount);
+            viewHolder.textConnection = (TextView) v.findViewById(R.id.connectionText);
             viewHolder.bSuppAccount.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,6 +81,12 @@ public class AccountItemAdapter extends BaseAdapter {
         }
         Account account = acounts.get(position);
         viewHolder.nom_prenom.setText(account.getPrenom());
+        //affichage de la connexion de l'utilisateur
+        String msgco = "Non-connecté";
+        if(account.getConnected().equals("true")){
+            msgco = "Connecté";
+        }
+        viewHolder.textConnection.setText(msgco);
 //        viewHolder.date_creation.setText(account.getCreatedAt());
         return v;
     }
@@ -87,6 +94,7 @@ public class AccountItemAdapter extends BaseAdapter {
     class AccountViewHolder{
         TextView nom_prenom;
         TextView date_creation;
+        TextView textConnection;
         Button bSuppAccount;
     }
 }

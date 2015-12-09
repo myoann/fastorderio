@@ -12,58 +12,67 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageView4"
-        android:src="@drawable/image_cercle_contact" />
+        android:src="@drawable/image_cercle_contact"
+        android:layout_weight="0.21"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
 
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/imageView4"
-        android:layout_marginStart="45dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:id="@+id/title_name_firstname"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="15dp"
-            android:textColor="@color/button_material_dark" />
+        android:layout_marginTop="22dp"
+        android:weightSum="1"
+        android:layout_marginLeft="5dp">
 
         <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_width="153dp"
             android:layout_height="match_parent"
-            android:layout_below="@+id/linearLayout"
-            android:layout_alignEnd="@+id/linearLayout"
-            android:layout_marginLeft="9dp"
-            android:weightSum="1">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/icone"
-                android:src="@drawable/abc_btn_check_to_on_mtrl_000" />
+            android:layout_toEndOf="@+id/imageView4"
+            android:weightSum="1"
+            android:layout_weight="4.60">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="169dp"
                 android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/title_name_firstname"
+                android:textColor="@color/button_material_dark"
+                android:layout_above="@+id/connectionText"
+                android:layout_toStartOf="@+id/connectionText"
+                android:text="nom" />
+
+            <TextView
+                android:layout_width="116dp"
+                android:layout_height="24dp"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:id="@+id/connectionText"
-                android:layout_marginTop="8dp"
-                android:textColor="@color/background_material_light"
-                android:textSize="12dp" />
+                android:textColor="@color/button_material_dark"
+                android:textSize="12dp"
+                android:layout_marginBottom="31dp"
+                android:layout_alignBottom="@+id/imageView4"
+                android:layout_alignEnd="@+id/icone"
+                android:text="msgconnexion" />
 
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="34dp"
-                android:text="Supprimer"
-                android:id="@+id/bSuppAccount"
-                android:layout_weight="0.21" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></LinearLayout>
+
         </LinearLayout>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:id="@+id/bSuppAccount"
+            android:layout_gravity="right"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
     </LinearLayout>
 
 </RelativeLayout>

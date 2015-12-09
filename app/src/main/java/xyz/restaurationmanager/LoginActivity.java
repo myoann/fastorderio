@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private View mRegisterFormView;
 
     AQuery aq;
-    String url = "http://92.243.14.22/person/login/";
+    String url = "http://92.243.14.22:1337/person/login/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

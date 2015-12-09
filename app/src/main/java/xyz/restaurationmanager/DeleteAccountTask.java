@@ -17,7 +17,7 @@ public class DeleteAccountTask extends AsyncTask<String, Void, String> {
     protected String doInBackground(String... params) {
         URL url = null;
         try {
-            url = new URL("http://92.243.14.22/person/"+params[0]);
+            url = new URL("http://92.243.14.22:1337/person/"+params[0]);
             HttpURLConnection httpCon = (HttpURLConnection) url.openConnection();
             httpCon.setDoOutput(true);
             httpCon.setRequestProperty("Content-Type", "application/xml");
