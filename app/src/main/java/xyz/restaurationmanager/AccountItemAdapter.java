@@ -1,10 +1,15 @@
 package xyz.restaurationmanager;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.androidquery.AQuery;
@@ -26,6 +31,8 @@ public class AccountItemAdapter extends BaseAdapter {
     private Context context;
     public List<Account> acounts;
     public int positionA;
+    private int image_cercle_contact;
+    private int image_cercle_contact1;
 
     public AccountItemAdapter(Context context, List<Account> acounts) {
         this.context = context;
@@ -59,6 +66,7 @@ public class AccountItemAdapter extends BaseAdapter {
            //viewHolder.date_creation= (TextView)v.findViewById(R.id.txt_date_inscription);
             viewHolder.bSuppAccount = (Button) v.findViewById(R.id.bSuppAccount);
             viewHolder.textConnection = (TextView) v.findViewById(R.id.connectionText);
+            viewHolder.buzzer = (ImageView) v.findViewById(R.id.imageView4);
             viewHolder.bSuppAccount.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -80,12 +88,16 @@ public class AccountItemAdapter extends BaseAdapter {
             viewHolder = (AccountViewHolder) v.getTag();
         }
         Account account = acounts.get(position);
-        viewHolder.nom_prenom.setText(account.getPrenom());
+        viewHolder.nom_prenom.setText(account.getNom()+ " "+account.getPrenom());
         //affichage de la connexion de l'utilisateur
         String msgco = "Non-connecté";
         if(account.getConnected().equals("true")){
             msgco = "Connecté";
+        }else{
+            //changement de la couleur du buzzer en fonction de la connexion
+            viewHolder.buzzer.setImageResource(R.drawable.image_cercle_contact_rouge);
         }
+
         viewHolder.textConnection.setText(msgco);
 //        viewHolder.date_creation.setText(account.getCreatedAt());
         return v;
@@ -96,5 +108,6 @@ public class AccountItemAdapter extends BaseAdapter {
         TextView date_creation;
         TextView textConnection;
         Button bSuppAccount;
+        ImageView buzzer;
     }
 }
