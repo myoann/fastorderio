@@ -43,13 +43,25 @@ public class NavigationDrawerActivity extends AppCompatActivity
         this.eTextNom.setText(a.getPrenom() + " " + a.getNom());
 
         this.bAfficherUtilisateurs = (Button)findViewById(R.id.bUtil);
-        this.bAfficherUtilisateurs.setOnClickListener(new View.OnClickListener(){
+        this.bAfficherUtilisateurs.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NavigationDrawerActivity.this, ListAccounts.class));
             }
         });
+
+        // TODO MODIFIER NOMS
+        this.bAfficherUtilisateurs = (Button)findViewById(R.id.bProd);
+        this.bAfficherUtilisateurs.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavigationDrawerActivity.this, ListProduct.class));
+            }
+        });
+
+
     }
 
     @Override
