@@ -43,4 +43,5 @@
         <item>India</item>
         <item>Indonesia</item>
     </string-array>
+    <string name="title_activity_menu">MenuActivity</string>
 </resources>

@@ -18,6 +18,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     Button bAfficherUtilisateurs;
+    Button bAfficherProduits;
+    Button bAfficherMenus;
 
     TextView eTextNom;
     @Override
@@ -51,9 +53,8 @@ public class NavigationDrawerActivity extends AppCompatActivity
             }
         });
 
-        // TODO MODIFIER NOMS
-        this.bAfficherUtilisateurs = (Button)findViewById(R.id.bProd);
-        this.bAfficherUtilisateurs.setOnClickListener(new View.OnClickListener(){
+        this.bAfficherProduits = (Button)findViewById(R.id.bProd);
+        this.bAfficherProduits.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -61,6 +62,14 @@ public class NavigationDrawerActivity extends AppCompatActivity
             }
         });
 
+        this.bAfficherMenus = (Button)findViewById(R.id.bMenu);
+        this.bAfficherMenus.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavigationDrawerActivity.this, MenuActivity.class));
+            }
+        });
 
     }
 
