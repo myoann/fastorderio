@@ -27,4 +27,5 @@ dependencies {
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.googlecode.android-query:android-query:0.25.9'
     compile 'com.google.code.gson:gson:2.4'
+    compile 'com.android.support:cardview-v7:21.0.+'
 }
