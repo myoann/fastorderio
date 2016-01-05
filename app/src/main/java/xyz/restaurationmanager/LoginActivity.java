@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
+    private TextView vTextConnexion;
 
     private View mProgressView;
     private View mRegisterFormView;
@@ -71,8 +72,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Set up the register form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.editTextLoginEmail);
         mPasswordView = (EditText) findViewById(R.id.editTextLoginPassword);
-
-
+        vTextConnexion = (TextView) findViewById(R.id.msgConnexion);
+        vTextConnexion.setText("");
 
 
         //Button enregistrerInscription = (Button) findViewById(R.id.buttonEnregistrerInscription);
@@ -133,8 +134,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 public void callback(String url, Success success, AjaxStatus status) {
                     Gson gson = new Gson();
                     Account obj = success.getUser();
-                    String isSuccess = gson.toJson(success.getSuccess());
-                    if (isSuccess.contentEquals(isSuccess)) {
+                    boolean isConnect = gson.fromJson(success.getSuccess(), Boolean.class);
+                    if (isConnect) {
                         Intent intent = new Intent(LoginActivity.this, NavigationDrawerActivity.class);
                         //to pass :
                         intent.putExtra("user", obj);
@@ -142,6 +143,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         // to retrieve object in second Activity
                         startActivity(intent);
                     } else {
+                        vTextConnexion.setText("Echec d'authentifiaction, veuillez saisir un identifiant correct s'il vous plaît.");
                         Log.d("NOOON", " pas connecte");
                     }
                 }
@@ -149,6 +151,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
+    @Override
+    protected void onRestart(){
+        super.onRestart();
+        //Pour enlever le message en cas de retour en arrière.
+        this.vTextConnexion.setText("");
+
+    }
     private boolean isEmailValid(String email) {
         return email.contains("@");
     }

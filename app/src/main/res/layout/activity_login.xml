@@ -40,6 +40,13 @@
 
             </android.support.design.widget.TextInputLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:id="@+id/msgConnexion"
+                android:layout_gravity="center_horizontal" />
+
             <Button android:id="@+id/login_button" style="?android:textAppearanceSmall"
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:layout_marginTop="16dp" android:text="@string/action_sign_in"
@@ -49,4 +56,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>
