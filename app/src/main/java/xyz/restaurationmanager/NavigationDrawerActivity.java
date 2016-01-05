@@ -20,6 +20,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
     Button bAfficherUtilisateurs;
     Button bAfficherProduits;
     Button bAfficherMenus;
+    Button bAjouterMenu;
 
     TextView eTextNom;
     @Override
@@ -68,6 +69,15 @@ public class NavigationDrawerActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NavigationDrawerActivity.this, MenuActivity.class));
+            }
+        });
+
+        this.bAjouterMenu = (Button)findViewById(R.id.bAddMenu);
+        this.bAjouterMenu.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NavigationDrawerActivity.this, AddMenuActivity.class));
             }
         });
 

@@ -44,4 +44,5 @@
         <item>Indonesia</item>
     </string-array>
     <string name="title_activity_menu">MenuActivity</string>
+    <string name="title_activity_add_menu">AddMenuActivity</string>
 </resources>
