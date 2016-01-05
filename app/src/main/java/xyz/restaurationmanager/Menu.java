@@ -10,11 +10,23 @@ import java.io.Serializable;
  * Created by Florian on 13/12/2015.
  */
 public class Menu  implements Transformer, Serializable {
+    String id;
     Double price;
     Double discount;
+
+
     String server;
     String cooker;
     String items;
+
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public Double getPrice() {
         return price;
@@ -59,6 +71,7 @@ public class Menu  implements Transformer, Serializable {
     @Override
     public String toString() {
         return "Menu{" +
+                "id="+id+
                 "price=" + price +
                 ", discount=" + discount +
                 ", server='" + server + '\'' +
