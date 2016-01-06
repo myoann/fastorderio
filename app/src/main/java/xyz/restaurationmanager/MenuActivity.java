@@ -42,7 +42,7 @@ public class MenuActivity extends AppCompatActivity {
                             JSONObject o = json.getJSONObject(i);
                             JSONObject oDetail = o.getJSONObject("0");
                             Menu m = new Menu();
-                            m.setPrice(oDetail.getDouble("price"));
+                            m.setPrice(oDetail.getInt("price"));
                             listeMenus.add(m);
                         } catch (JSONException e) {
 

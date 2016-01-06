@@ -75,6 +75,14 @@
             android:layout_alignStart="@+id/card_view_entrees">
 
         </android.support.v7.widget.CardView>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Menu"
+            android:id="@+id/addANewMenu"
+            android:layout_below="@+id/card_view_desserts"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 
