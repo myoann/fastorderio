@@ -44,14 +44,15 @@
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListAccounts" />
+        <activity android:name=".ListProducts" />
         <activity android:name=".ListProduct" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
-            android:name=".DisplayMenu"
-            android:label="@string/title_activity_display_menu"
+            android:name=".AddMenuActivity"
+            android:label="@string/title_activity_add_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

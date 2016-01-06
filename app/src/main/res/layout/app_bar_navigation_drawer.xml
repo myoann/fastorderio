@@ -71,6 +71,14 @@
             android:id="@+id/bMenu"
             android:layout_above="@+id/bUtil"
             android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ajouter un menu"
+            android:id="@+id/bAddMenu"
+            android:layout_above="@+id/bMenu"
+            android:layout_centerHorizontal="true" />
     </RelativeLayout>
 
 

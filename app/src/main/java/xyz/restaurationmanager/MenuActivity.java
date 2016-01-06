@@ -38,13 +38,11 @@ public class MenuActivity extends AppCompatActivity {
                     //successful ajax call, show status code and json content
 
                     for (int i = 0; i < json.length(); i++) {
-
                         try {
                             JSONObject o = json.getJSONObject(i);
-                           // JSONObject oDetail = o.getJSONObject("0");
+                            JSONObject oDetail = o.getJSONObject("0");
                             Menu m = new Menu();
-                            m.setPrice(o.getDouble("price"));
-                            m.setId(o.getString("id"));
+                            m.setPrice(oDetail.getInt("price"));
                             listeMenus.add(m);
                         } catch (JSONException e) {
 

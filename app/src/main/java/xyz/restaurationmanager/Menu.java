@@ -5,19 +5,20 @@ import com.androidquery.callback.Transformer;
 import com.google.gson.Gson;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  * Created by Florian on 13/12/2015.
  */
 public class Menu  implements Transformer, Serializable {
     String id;
-    Double price;
-    Double discount;
+    int price;
+    int discount;
 
 
     String server;
     String cooker;
-    String items;
+    ArrayList<String> items;
 
 
     public String getId() {
@@ -28,11 +29,11 @@ public class Menu  implements Transformer, Serializable {
         this.id = id;
     }
 
-    public Double getPrice() {
+    public int getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(int price) {
         this.price = price;
     }
 
@@ -44,19 +45,19 @@ public class Menu  implements Transformer, Serializable {
         this.cooker = cooker;
     }
 
-    public String getItems() {
+    public ArrayList<String> getItems() {
         return items;
     }
 
-    public void setItems(String items) {
+    public void setItems(ArrayList<String> items) {
         this.items = items;
     }
 
-    public Double getDiscount() {
+    public int getDiscount() {
         return discount;
     }
 
-    public void setDiscount(Double discount) {
+    public void setDiscount(int discount) {
         this.discount = discount;
     }
 
