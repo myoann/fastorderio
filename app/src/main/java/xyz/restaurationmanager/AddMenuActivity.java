@@ -26,6 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class AddMenuActivity extends AppCompatActivity implements View.OnClickListener {
     private AutoCompleteTextView mEmailView;
@@ -103,10 +104,34 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
 
+        JSONObject json = new JSONObject();
 
             GsonTransformer t = new GsonTransformer();
+        //Map<String, Object> params = new HashMap<String, Object>();
+        try {
+            json.put("price", 716);
+            json.put("discount", 100);
+            json.put("server", 222);
+            json.put("cooker", 1111);
+            JSONArray itemA = new JSONArray();
+            JSONObject item1 = new JSONObject();
+            item1.put("id","123456789");
+            itemA.put(item1);
+            json.put("items",itemA);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
-            Map<String, Object> params = new HashMap<String, Object>();
+        aq.post(url, json, JSONObject.class, new AjaxCallback<JSONObject>() {
+
+            @Override
+            public void callback(String url, JSONObject json, AjaxStatus status) {
+
+                Log.d("res", "->" + json);
+
+            }
+        });
+           /* Map<String, Object> params = new HashMap<String, Object>();
             params.put("price", 322);
             params.put("discount", 12);
             params.put("server",server);
@@ -125,15 +150,36 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-            }*/
+            }
 
 
             params.put("items", itemsArray);
 
 
-        //params.put("items", itemss);
+            //params.put("items", itemss);
+
+            JSONObject input = new JSONObject();
+            try {
+                input.put("price", 30);
+                input.put("discount", 1);
+                JSONObject serverO = new JSONObject();
+                serverO.put("id", "569147e502399fd203f3dee0");
+                input.put("server", serverO);
+                JSONObject cookerO = new JSONObject();
+                cookerO.put("id", "56926330e0cac4380e759bd9");
+                input.put("cooker", cookerO);
 
 
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.d("input",input.toString());
+        aq.post(url, input, JSONArray.class, new AjaxCallback<JSONArray>() {
+            public void callback(String url, JSONArray menu, AjaxStatus status) {
+                Log.d("AGSON Object:", menu.toString());
+            }
+        });*/
+/*
             aq = new AQuery(v);
             aq.transformer(t).ajax(url, params, Menu.class, new AjaxCallback<Menu>() {
                 public void callback(String url, Menu menu, AjaxStatus status) {
