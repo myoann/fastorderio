@@ -163,6 +163,9 @@ public class DisplayMenu extends AppCompatActivity {
         titre.setText("Desserts");
         titre.setTextSize(30);
         tDesserts.addView(titre);
+        int nbEntrees = 0;
+        int nbPlats = 0;
+        int nbDesserts = 0;
         for(int i = 0; i<this.listeProduits.size(); i++){
             Product p = this.listeProduits.get(i);
             TextView t = new TextView(getApplicationContext());
@@ -171,11 +174,35 @@ public class DisplayMenu extends AppCompatActivity {
             tr.addView(t);
             if("Entrée".equals(p.getType()) || "Appéritif".equals(p.getType())){
                 tEntrees.addView(tr);
+                nbEntrees++;
             }else if("Plat ".equals(p.getType())){
                 tPlats.addView(tr);
+                nbPlats++;
             }else{
                 tDesserts.addView(tr);
+                nbDesserts++;
             }
+        }
+        if(nbEntrees==0){
+            TextView t = new TextView(getApplicationContext());
+            t.setText("Aucune entrée");
+            tr = new TableRow(this);
+            tr.addView(t);
+            tEntrees.addView(tr);
+        }
+        if(nbPlats==0){
+            TextView t = new TextView(getApplicationContext());
+            t.setText("Aucun plat");
+            tr = new TableRow(this);
+            tr.addView(t);
+            tPlats.addView(tr);
+        }
+        if(nbDesserts==0){
+            TextView t = new TextView(getApplicationContext());
+            t.setText("Aucun dessert");
+            tr = new TableRow(this);
+            tr.addView(t);
+            tDesserts.addView(tr);
         }
     }
 }

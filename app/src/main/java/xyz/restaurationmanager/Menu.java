@@ -1,5 +1,7 @@
 package xyz.restaurationmanager;
 
+import android.util.Log;
+
 import com.androidquery.callback.AjaxStatus;
 import com.androidquery.callback.Transformer;
 import com.google.gson.Gson;
@@ -14,12 +16,42 @@ public class Menu  implements Transformer, Serializable {
     String id;
     int price;
     int discount;
+    String createdAt;
+    String updatedAt;
 
 
     String server;
     String cooker;
     ArrayList<String> items;
+    public Menu(){
 
+    }
+    public Menu(String id, int price, int discount, String createdAt, String updatedAt, String server, String cooker, ArrayList<String> items) {
+        this.id = id;
+        this.price = price;
+        this.discount = discount;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+        this.server = server;
+        this.cooker = cooker;
+        this.items = items;
+    }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
 
     public String getId() {
         return id;
@@ -84,6 +116,7 @@ public class Menu  implements Transformer, Serializable {
     @Override
     public <T> T transform(String url, Class<T> type, String encoding, byte[] data, AjaxStatus status) {
         Gson g = new Gson();
+        Log.d("type", type.toString());
         return g.fromJson(new String(data), type);
     }
 }
