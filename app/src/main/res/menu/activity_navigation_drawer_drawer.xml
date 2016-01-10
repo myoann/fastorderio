@@ -10,8 +10,6 @@
 
     <item android:title="Administration">
         <menu>
-            <item android:id="@+id/nav_slideshow" android:icon="@android:drawable/ic_menu_slideshow"
-                android:title="Utilisateurs" />
             <item android:id="@+id/nav_send" android:icon="@android:drawable/ic_menu_send"
                 android:title="Se déconnecter" />
         </menu>
