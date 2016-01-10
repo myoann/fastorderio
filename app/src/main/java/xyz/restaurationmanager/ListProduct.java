@@ -8,7 +8,6 @@ import android.widget.ListView;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
 import com.androidquery.callback.AjaxStatus;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +25,6 @@ public class ListProduct extends AppCompatActivity {
         setContentView(R.layout.activity_list_product);
         AQuery aq = new AQuery(this);
         final ArrayList<Product> listProducts = new ArrayList<Product>();
-
         aq.ajax(url, JSONArray.class, new AjaxCallback<JSONArray>() {
             @Override
             public void callback(String url, JSONArray json, AjaxStatus status) {

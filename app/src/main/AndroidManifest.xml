@@ -133,15 +133,21 @@
             android:label="@string/title_activity_test"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListAccounts" />
-        <activity android:name=".ListProducts" />
         <activity android:name=".ListProduct" />
+        <activity android:name=".DisplayMenu"
+            android:label="Détail sur un menu"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddMenuActivity"
             android:label="@string/title_activity_add_menu"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DisplayProductActivity"
+            android:label="@string/title_activity_display_product"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>-->
 

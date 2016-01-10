@@ -68,15 +68,15 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
         String server = "7531";
         String cooker = "642";
         ArrayList<String> items = new ArrayList<String>();
-        items.add("564113af6c7e6511333f616c");
+       /* items.add("564113af6c7e6511333f616c");
         items.add("564113af6c7e6511333f6172");
-        items.add("564113af6c7e6511333f6165");
+        items.add("564113af6c7e6511333f6165");*/
 
         aq = new AQuery(v);
 
         boolean cancel = false;
         View focusView = null;
-
+    /*
         // Check for not null server
         if (TextUtils.isEmpty(server)) {
             //mFirstNameView.setError(getString(R.string.error_field_required));
@@ -99,7 +99,7 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             // There was an error; don't attempt login and focus the first
             // form field with an error.
             focusView.requestFocus();
-        } else {
+        } else {*/
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
 
@@ -118,13 +118,14 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
                 itemss.put("id",items.get(i));
             }
 
-            params.put("items", itemss);
+            //params.put("items", itemss);
 
 
             aq = new AQuery(v);
             aq.transformer(t).ajax(url, params, Menu.class, new AjaxCallback<Menu>() {
                 public void callback(String url, Menu menu, AjaxStatus status) {
                     Gson gson = new Gson();
+                    Log.d("GSON status",status.getMessage()+status.getError());
                     Log.d("GSON Object:", gson.toJson(menu));
                 }
             });
@@ -137,6 +138,6 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
                 }
             });*/
 
-        }
+        //}
     }
 }

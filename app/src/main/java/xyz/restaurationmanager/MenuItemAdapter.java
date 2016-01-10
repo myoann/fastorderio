@@ -1,12 +1,13 @@
 package xyz.restaurationmanager;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -42,16 +43,32 @@ public class MenuItemAdapter extends BaseAdapter {
         MenuViewHolder viewHolder = new MenuViewHolder();
         if(v==null) {
             v = View.inflate(context, R.layout.content_list_menu, null);
-            viewHolder.libelleMenu = (TextView) v.findViewById(R.id.libellé_menu);
+            viewHolder.titreMenu = (TextView) v.findViewById(R.id.titre_menu);
+            viewHolder.prixMenu = (TextView) v.findViewById(R.id.prix_menu);
+            viewHolder.boutonAccesMenu = (Button) v.findViewById(R.id.boutton_acces_menu);
             v.setTag(viewHolder);
         }else{
             viewHolder = (MenuViewHolder) v.getTag();
         }
-        viewHolder.libelleMenu.setText(this.listeMenus.get(position).getPrice()+" euros");
+
+        viewHolder.titreMenu.setText("Menu n°" + (position + 1));
+        viewHolder.prixMenu.setText(this.listeMenus.get(position).getPrice()+" euros");
+        viewHolder.boutonAccesMenu.setTag(this.listeMenus.get(position).getId());
+        viewHolder.boutonAccesMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,DisplayMenu.class);
+                intent.putExtra("id", v.getTag() + "");
+                context.startActivity(intent);
+
+            }
+        });
         return v;
     }
 
     class MenuViewHolder{
-        TextView libelleMenu;
+        TextView titreMenu;
+        TextView prixMenu;
+        Button boutonAccesMenu;
     }
 }
