@@ -106,13 +106,13 @@ public class RegistrationIntentService extends IntentService {
         // Add custom implementation, as needed.
         System.out.println(token);
         //String name=getString(R.string.cooker_name),  email=getString(R.string.cooker_email), api_key=getString(R.string.api_key).equals("$$")?"AIzaSyBNy7W34fFGy8oWrtD7q-O7tXwTC0LW6o4":getString(R.string.api_key);
-        String name="Monsieur Parfait",  email="test@cooker.com", api_key="AIzaSyBNy7W34fFGy8oWrtD7q-O7tXwTC0LW6o4".equals("$$")?"AIzaSyBNy7W34fFGy8oWrtD7q-O7tXwTC0LW6o4":"AIzaSyBNy7W34fFGy8oWrtD7q-O7tXwTC0LW6o4";
+        String name="Massa Moise Ltd.",  email="massa-moise@cooker.com", api_key="AIzaSyCoUwkiSQv4UxSgQc0wWH0wy0_YaKltyRk".equals("$$")?"AIzaSyCoUwkiSQv4UxSgQc0wWH0wy0_YaKltyRk":"AIzaSyCoUwkiSQv4UxSgQc0wWH0wy0_YaKltyRk";
         AQuery aq = new AQuery(this);
         Map<String, Object> params = new HashMap<>();
-        params.put("name", name);
+        params.put("name", "Massa Moise Ltd");
         params.put("email", email);
         params.put("gcmkey", token);
-        params.put("apikey", api_key);
+        params.put("apikey", "AIzaSyCoUwkiSQv4UxSgQc0wWH0wy0_YaKltyRk");
         aq.ajax("http://92.243.14.22:1337/cooker", params, JSONObject.class,this,"jsonCallback");
     }
 
