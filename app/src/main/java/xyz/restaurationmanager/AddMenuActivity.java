@@ -70,11 +70,11 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
         int nbDesserts = 0;
 
         for(int i = 0; i<cart.size();i++) {
-            if ((cart.get(i).getType() == "Entrée") || (cart.get(i).getType() == "Appéritif")) {
+            if ((cart.get(i).getType().equalsIgnoreCase("Entrée")) || (cart.get(i).getType().equalsIgnoreCase("Appéritif"))) {
                 nbEntrees += 1;
-            } else if ((cart.get(i).getType() == "Plat") || (cart.get(i).getType() == "Plat ")) {
+            } else if ((cart.get(i).getType().equalsIgnoreCase("Plat")) || (cart.get(i).getType().equalsIgnoreCase("Plat "))) {
                 nbPlats += 1;
-            } else if (cart.get(i).getType() == "Dessert") {
+            } else if (cart.get(i).getType().equalsIgnoreCase("Dessert")) {
                 nbDesserts += 1;
             }
             reducTotal += cart.get(i).getDiscount();
@@ -89,13 +89,25 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
         this.eTextPrixTotal.setText(String.valueOf(prixTotalReduit) + " €");
 
         this.tEntrees = (TextView)(this.findViewById(R.id.entrees));
-        this.tEntrees.setText(nbEntrees + " Entrées & Aperos");
+        if (nbEntrees > 1) {
+            this.tEntrees.setText(nbEntrees + " Entrées & Aperos");
+        } else {
+            this.tEntrees.setText(nbEntrees + " Entrée ou Apero");
+        }
 
         this.tPlats = (TextView)(this.findViewById(R.id.plats));
-        this.tPlats.setText(nbPlats + " Plats");
+        if (nbPlats > 1) {
+            this.tPlats.setText(nbPlats + " Plats");
+        } else {
+            this.tPlats.setText(nbPlats + " Plat");
+        }
 
         this.tDesserts = (TextView)(this.findViewById(R.id.desserts));
-        this.tDesserts.setText(nbDesserts + " Desserts");
+        if (nbDesserts > 1) {
+            this.tDesserts.setText(nbDesserts + " Desserts");
+        } else {
+            this.tDesserts.setText(nbDesserts + " Dessert");
+        }
 
         // Set up the register form.
         //mEmailView = (AutoCompleteTextView) findViewById(R.id.editTextRegisterEmail);
