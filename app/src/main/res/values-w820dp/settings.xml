@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="cooker_name">Nom du cuisinier</string>
-    <string name="cooker_email">email@cuisinier.fr</string>
+    <string name="cooker_name">Massa Moise Ltd</string>
+    <string name="cooker_email">ChezWam@cuisinier.fr</string>
     <string name="api_key">AIzaSyCoUwkiSQv4UxSgQc0wWH0wy0_YaKltyRk</string>
 </resources>
