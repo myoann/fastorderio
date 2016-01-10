@@ -64,8 +64,8 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
         this.eTextNbArticles = (TextView)(this.findViewById(R.id.nbArticles));
         this.eTextNbArticles.setText(String.valueOf(cart.size()));
 
-        Double reducTotal = 0.0;
-        Double prixTotal = 0.0;
+        reducTotal = 0.0;
+        prixTotal = 0.0;
         Double prixTotalReduit = 0.0;
         int nbEntrees = 0;
         int nbPlats = 0;
