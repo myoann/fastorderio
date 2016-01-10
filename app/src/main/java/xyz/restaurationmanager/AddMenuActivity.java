@@ -114,7 +114,7 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
 
             JSONArray itemsArray = new JSONArray();
             JSONObject anItem = new JSONObject();
-            anItem.put("id", (String) " okokook");
+         //   anItem.put("id", (String) " okokook");
 
 
             //JSONArray itemss = new JSONArray()
