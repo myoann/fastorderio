@@ -13,6 +13,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Vector;
 
 public class ListProduct extends AppCompatActivity {
 
@@ -38,7 +40,7 @@ public class ListProduct extends AppCompatActivity {
                             Product p = new Product();
                             if (!o.getString("name").isEmpty() && !o.getString("price").isEmpty() && !o.getString("createdAt").isEmpty()) {
                                 p.setName(o.getString("name"));
-                                p.setPrice(o.getString("price"));
+                                p.setPrice(o.getDouble("price"));
                                 p.setCreatedAt(o.getString("createdAt"));
 
                                 if (!o.getString("description").isEmpty()) {
@@ -62,9 +64,9 @@ public class ListProduct extends AppCompatActivity {
                                     p.setPicture("");
                                 }
                                 if (!o.getString("discount").isEmpty()) {
-                                    p.setDiscount(o.getString("discount"));
+                                    p.setDiscount(o.getDouble("discount"));
                                 } else {
-                                    p.setDiscount("");
+                                    p.setDiscount(0.0);
                                 }
                                 if (!o.getString("description").isEmpty()) {
                                     p.setDescription(o.getString("description"));
@@ -99,5 +101,14 @@ public class ListProduct extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private static List<Product> cart;
+    public static List<Product> getCart() {
+        if(cart == null) {
+            cart = new Vector<Product>();
+        }
+
+        return cart;
     }
 }

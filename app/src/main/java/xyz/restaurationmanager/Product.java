@@ -28,18 +28,18 @@ public class Product implements Transformer, Serializable {
 
     String name;
     String description;
-    String price;
+    Double price;
     String calories;
     String type;
     String picture;
-    String discount;
+    Double discount;
     String createdAt;
     String updatedAt;
     String id;
 
     public Product() {}
 
-    public Product(String name, String description, String price, String calories, String type, String picture, String discount, String createdAt, String updatedAt, String id) {
+    public Product(String name, String description, Double price, String calories, String type, String picture, Double discount, String createdAt, String updatedAt, String id) {
         this.name = name;
         this.description = description;
         this.price = price;
@@ -68,11 +68,11 @@ public class Product implements Transformer, Serializable {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -100,11 +100,11 @@ public class Product implements Transformer, Serializable {
         this.picture = picture;
     }
 
-    public String getDiscount() {
+    public Double getDiscount() {
         return discount;
     }
 
-    public void setDiscount(String discount) {
+    public void setDiscount(Double discount) {
         this.discount = discount;
     }
 

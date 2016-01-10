@@ -44,7 +44,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:padding="5dp">
+                android:padding="5dp"
+                android:id="@+id/linearLayout">
 
                 <TextView
                     android:layout_width="fill_parent"
@@ -111,8 +112,18 @@
                         android:textAppearance="?android:attr/textAppearanceSmall"
                         android:text="discount"
                         android:id="@+id/discount_product" />
+
                 </LinearLayout>
+
             </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ajouter au menu"
+                android:id="@+id/ButtonAddToCart"
+                android:layout_below="@+id/linearLayout"
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
     </ScrollView>

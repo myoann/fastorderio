@@ -40,7 +40,11 @@ public class ProductItemAdapter extends BaseAdapter {
 
     @Override
     public long getItemId(int arg0) {
-        return Long.getLong(products.get(arg0).getId());
+        if (Long.getLong(products.get(arg0).getId()) != null) {
+            return Long.getLong(products.get(arg0).getId());
+        } else {
+            return 0;
+        }
     }
 
     @Override
