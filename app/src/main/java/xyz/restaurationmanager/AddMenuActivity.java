@@ -51,6 +51,8 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
     TextView tEntrees;
     TextView tPlats;
     TextView tDesserts;
+    Double reducTotal;
+    Double prixTotal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,15 +133,13 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             GsonTransformer t = new GsonTransformer();
         //Map<String, Object> params = new HashMap<String, Object>();
         try {
-            json.put("price", 716);
-            json.put("discount", 100);
-            json.put("server", 222);
-            json.put("cooker", 1111);
-            JSONArray itemA = new JSONArray();
-            JSONObject item1 = new JSONObject();
-            item1.put("id","123456789");
-            itemA.put(item1);
-            json.put("items",itemA);
+            json.put("price", this.prixTotal);
+            json.put("discount", this.reducTotal);
+            json.put("server", "56843162e913666b573e6c2f");
+            json.put("cooker", "568d0432a222d88f44e8c5c1");
+            JSONArray itemArray = this.getItemsCommande();
+            Log.d("itemArray",itemArray.toString());
+            json.put("items",itemArray);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -154,5 +154,16 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             }
         });
 
+    }
+    public JSONArray getItemsCommande() throws JSONException {
+        JSONArray items = new JSONArray();
+        final List<Product> cart = ListProduct.getCart();
+        for(int i = 0; i<cart.size();i++) {
+            Log.d("ici","**"+cart.get(i).toString());
+            JSONObject item = new JSONObject();
+            item.put("id",cart.get(i).getId());
+            items.put(item);
+        }
+        return items;
     }
 }

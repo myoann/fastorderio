@@ -63,9 +63,10 @@ public class DisplayProductActivity extends AppCompatActivity {
                     ImageView tvPicture = (ImageView) findViewById(R.id.image_product);
                     tvPicture.setImageURI(Uri.parse(json.getString("picture")));
                     actualProduct.setDiscount(json.getDouble("discount"));
+                    actualProduct.setId(json.getString("id"));
                     TextView tvDiscount = (TextView) findViewById(R.id.discount_product);
                     tvDiscount.setText("Réduction : " + json.getString("discount") + "$  ");
-                    Log.d("createdAt",json.getString("createdAt"));
+                    Log.d("createdAt", json.getString("createdAt"));
                     Log.d("updatedAt",json.getString("updatedAt"));
                     Log.d("id", json.getString("id"));
 
