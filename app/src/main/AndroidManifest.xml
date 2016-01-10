@@ -16,7 +16,7 @@
         android:protectionLevel="signature" />
     <uses-permission android:name="xyz.restaurationmanager.permission.C2D_MESSAGE" />
 
-    <application
+    <!--<application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,7 +31,6 @@
             </intent-filter>
         </activity>
 
-        <!-- [START gcm_receiver] -->
         <receiver
             android:name="com.google.android.gms.gcm.GcmReceiver"
             android:exported="true"
@@ -41,9 +40,7 @@
                 <category android:name="gcm.play.android.samples.com.gcmquickstart" />
             </intent-filter>
         </receiver>
-        <!-- [END gcm_receiver] -->
 
-        <!-- [START gcm_listener] -->
         <service
             android:name=".MyGcmListenerService"
             android:exported="false" >
@@ -51,8 +48,6 @@
                 <action android:name="com.google.android.c2dm.intent.RECEIVE" />
             </intent-filter>
         </service>
-        <!-- [END gcm_listener] -->
-        <!-- [START instanceId_listener] -->
         <service
             android:name=".MyInstanceIDListenerService"
             android:exported="false">
@@ -60,7 +55,6 @@
                 <action android:name="com.google.android.gms.iid.InstanceID"/>
             </intent-filter>
         </service>
-        <!-- [END instanceId_listener] -->
         <service
             android:name=".RegistrationIntentService"
             android:exported="false">
@@ -95,9 +89,9 @@
             android:name=".AddMenuActivity"
             android:label="@string/title_activity_add_menu"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>
+    </application>-->
 
-    <!--<application
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -149,6 +143,6 @@
             android:name=".DisplayProductActivity"
             android:label="@string/title_activity_display_product"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-    </application>-->
+    </application>
 
 </manifest>
