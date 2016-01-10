@@ -6,7 +6,8 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="5dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -14,8 +15,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="NomProduit"
             android:id="@+id/product_name"
-            android:gravity="center"
-            android:textColor="@color/colorPrimaryDark" />
+            android:gravity="center" />
 
         <Button
             android:layout_width="wrap_content"

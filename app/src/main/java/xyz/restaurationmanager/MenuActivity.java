@@ -26,8 +26,8 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        /*Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);*/
         AQuery aq = new AQuery(this);
         final ArrayList<Menu> listeMenus = new ArrayList<Menu>();
         aq.ajax(url, JSONArray.class, new AjaxCallback<JSONArray>() {
@@ -40,9 +40,9 @@ public class MenuActivity extends AppCompatActivity {
                     for (int i = 0; i < json.length(); i++) {
                         try {
                             JSONObject o = json.getJSONObject(i);
-                            JSONObject oDetail = o.getJSONObject("0");
                             Menu m = new Menu();
-                            m.setPrice(oDetail.getInt("price"));
+                            m.setId(o.getString("id"));
+                            m.setPrice(Integer.valueOf(o.getString("price")));
                             listeMenus.add(m);
                         } catch (JSONException e) {
 
@@ -59,5 +59,6 @@ public class MenuActivity extends AppCompatActivity {
         });
 
     }
+
 
 }

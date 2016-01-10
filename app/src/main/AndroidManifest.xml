@@ -45,6 +45,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ListAccounts" />
         <activity android:name=".ListProduct" />
+        <activity android:name=".DisplayMenu"
+            android:label="Détail sur un menu"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu"

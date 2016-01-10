@@ -20,6 +20,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
+
 public class DisplayProductActivity extends AppCompatActivity {
 
     private String urlProduct = "http://92.243.14.22:1337/product/";

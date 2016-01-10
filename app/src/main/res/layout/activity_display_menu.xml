@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="xyz.restaurationmanager.DisplayMenu">
+    tools:context=".DisplayMenu">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:context="xyz.restaurationmanager.DisplayMenu"
+        tools:context=".DisplayMenu"
         tools:showIn="@layout/activity_display_menu">
 
         <TextView
@@ -44,56 +44,65 @@
             android:textColor="#be2525" />
 
         <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TitreMenu"
+            android:layout_alignParentStart="true"
+            android:gravity="clip_horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Prix"
+                android:id="@+id/price_menu_text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="réduction"
+                android:id="@+id/discount_menu_text" />
+        </LinearLayout>
+
+        <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TitreMenu"
             android:layout_alignParentStart="true"
             android:background="#dfdddd"
-            android:layout_marginTop="15dp">
+            android:layout_marginTop="30dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Entrées"
-                    android:id="@+id/textView7" />
-
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TableLayout>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layout_entrees"></TableLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Plats"
-                    android:id="@+id/textView8" />
-
                 <TableLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"></TableLayout>
+                    android:layout_height="wrap_content"
+                    android:id="@+id/layout_plats"></TableLayout>
             </RelativeLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:text="Desserts"
-                    android:id="@+id/textView9" />
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/layout_desserts"></TableLayout>
             </RelativeLayout>
 
         </LinearLayout>
