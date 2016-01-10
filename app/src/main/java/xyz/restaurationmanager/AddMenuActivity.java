@@ -112,20 +112,33 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             params.put("server",server);
             params.put("cooker",cooker);
 
-            //JSONArray itemss = new JSONArray()
-            HashMap<String, Object> itemss = new HashMap<String, Object>();
-            for(int i = 0; i<items.size();i++) {
-                itemss.put("id",items.get(i));
-            }
+            JSONArray itemsArray = new JSONArray();
+            JSONObject anItem = new JSONObject();
+            anItem.put("id", (String) " okokook");
 
-            //params.put("items", itemss);
+
+            //JSONArray itemss = new JSONArray()
+           /* HashMap<String, Object> itemss = new HashMap<String, Object>();
+            for(int i = 0; i<items.size();i++) {
+                try {
+                    itemsArray.put(i, anItem);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }*/
+
+
+            params.put("items", itemsArray);
+
+
+        //params.put("items", itemss);
 
 
             aq = new AQuery(v);
             aq.transformer(t).ajax(url, params, Menu.class, new AjaxCallback<Menu>() {
                 public void callback(String url, Menu menu, AjaxStatus status) {
                     Gson gson = new Gson();
-                    Log.d("GSON status",status.getMessage()+status.getError());
+                    Log.d("GSON status", status.getMessage() + status.getError());
                     Log.d("GSON Object:", gson.toJson(menu));
                 }
             });
