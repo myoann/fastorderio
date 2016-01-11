@@ -170,6 +170,8 @@ public class DisplayMenu extends AppCompatActivity {
             Product p = this.listeProduits.get(i);
             TextView t = new TextView(getApplicationContext());
             t.setText(p.getName());
+            t.setTextSize(17);
+            t.setTextColor (getResources().getColor(R.color.colorPrimaryDark));
             tr = new TableRow(this);
             tr.addView(t);
             if("Entrée".equals(p.getType()) || "Appéritif".equals(p.getType())){
@@ -186,6 +188,8 @@ public class DisplayMenu extends AppCompatActivity {
         if(nbEntrees==0){
             TextView t = new TextView(getApplicationContext());
             t.setText("Aucune entrée");
+            t.setTextSize(17);
+            t.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
             tr = new TableRow(this);
             tr.addView(t);
             tEntrees.addView(tr);
@@ -193,6 +197,8 @@ public class DisplayMenu extends AppCompatActivity {
         if(nbPlats==0){
             TextView t = new TextView(getApplicationContext());
             t.setText("Aucun plat");
+            t.setTextSize(17);
+            t.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
             tr = new TableRow(this);
             tr.addView(t);
             tPlats.addView(tr);
@@ -200,6 +206,8 @@ public class DisplayMenu extends AppCompatActivity {
         if(nbDesserts==0){
             TextView t = new TextView(getApplicationContext());
             t.setText("Aucun dessert");
+            t.setTextSize(17);
+            t.setTextColor(getResources().getColor(R.color.colorPrimaryDark));
             tr = new TableRow(this);
             tr.addView(t);
             tDesserts.addView(tr);
