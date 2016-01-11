@@ -136,7 +136,7 @@ public class AddMenuActivity extends AppCompatActivity implements View.OnClickLi
             json.put("price", this.prixTotal);
             json.put("discount", this.reducTotal);
             json.put("server", "56843162e913666b573e6c2f");
-            json.put("cooker", "568d0432a222d88f44e8c5c1");
+            json.put("cooker", "566c6eb783916d6520e32581");
             JSONArray itemArray = this.getItemsCommande();
             Log.d("itemArray",itemArray.toString());
             json.put("items",itemArray);
